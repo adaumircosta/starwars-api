@@ -1,3 +1,21 @@
 spring:
-    application:
-        name: starwars-api
+  application:
+    name: starwars-api
+
+services:
+  swapi:
+    name: startwars-api
+    url: https://swapi.dev/api
+    endpoint-films: /films
+    endpoint-people: /people
+    endpoint-planets: /planets
+    endpoint-starships: /starships
+    endpoint-vehicles: /vehicles
+    endpoint-species: /species
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 3000
+        readTimeout: 3000
