@@ -1,14 +1,18 @@
 package br.com.starwars.api.exceptions;
 
-import org.springframework.http.HttpStatus;
+import br.com.starwars.api.interceptor.dto.ErrorDto;
+import lombok.Getter;
 
+import java.util.List;
+
+@Getter
 public class FeignCustomException extends RuntimeException {
 
-    private final HttpStatus status;
-    private final String message;
+    private final Integer httpStatus;
+    private final List<ErrorDto> erros;
 
-    public FeignCustomException(HttpStatus status, String message) {
-        this.status = status;
-        this.message = message;
+    public FeignCustomException(Integer httpStatus, ErrorDto errorDto) {
+        this.erros = List.of(errorDto);
+        this.httpStatus = httpStatus;
     }
 }

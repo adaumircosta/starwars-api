@@ -1,6 +1,7 @@
 package br.com.starwars.api.config;
 
 import br.com.starwars.api.exceptions.FeignCustomException;
+import br.com.starwars.api.interceptor.dto.ErrorDto;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,7 @@ public class FeignCustomErrorDecoder implements ErrorDecoder {
         final String apiName = getNameApi(response);
         final String message = MessageFormat.format(INTEGRATION_ERROR_MESSAGE, apiName);
         logErrorResponse(response, apiName);
-        return new FeignCustomException(httpStatus, message);
+        return new FeignCustomException(httpStatus.value(), buildErrorDto(message));
     }
 
     private void logErrorResponse(final Response response, String apiName) {
@@ -47,5 +48,13 @@ public class FeignCustomErrorDecoder implements ErrorDecoder {
 
     private static String getNameApi(Response response){
         return response.request().requestTemplate().feignTarget().name();
+    }
+
+    private ErrorDto buildErrorDto(String message) {
+        return ErrorDto
+                .builder()
+                .title("Feign Error")
+                .detail(message)
+                .build();
     }
 }
