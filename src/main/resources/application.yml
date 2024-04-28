@@ -13,6 +13,14 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
 
+  cloud:
+    openfeign:
+      okhttp:
+        enabled: true
+      httpclient:
+        disable-ssl-validation: true
+        enabled: false
+
 services:
   swapi:
     name: startwars-api
@@ -24,9 +32,6 @@ services:
     endpoint-vehicles: /vehicles
     endpoint-species: /species
 
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 3000
-        readTimeout: 3000
+logging:
+  level:
+    br.com.starwars.api.external.gateway: DEBUG
