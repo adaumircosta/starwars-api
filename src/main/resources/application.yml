@@ -2,8 +2,11 @@ spring:
   application:
     name: starwars-api
 
+  h2:
+    console:
+      enabled: true
   datasource:
-    url: jdbc:h2:mem:startwarsdb
+    url: jdbc:h2:mem:starwarsdb
     driver-class-name: org.h2.Driver
     username: sa
     password: password
