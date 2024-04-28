@@ -1,0 +1,76 @@
+package br.com.starwars.api.external.repository.starwars.entities;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
+
+import java.time.Instant;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "starship")
+public class StarshipEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "starship_id", nullable = false)
+    private Integer id;
+
+    @Column(name = "name", nullable = false, length = 100)
+    private String name;
+
+    @Column(name = "model", nullable = false, length = 100)
+    private String model;
+
+    @Column(name = "manufacturer", nullable = false)
+    private String manufacturer;
+
+    @Column(name = "cost_in_credits", length = 100)
+    private String costInCredits;
+
+    @Column(name = "length")
+    private Float length;
+
+    @Column(name = "max_atmospheric_speed")
+    private Integer maxAtmosphericSpeed;
+
+    @Column(name = "crew")
+    private Integer crew;
+
+    @Column(name = "passengers")
+    private Integer passengers;
+
+    @Column(name = "cargo_capacity")
+    private Long cargoCapacity;
+
+    @Column(name = "consumables", length = 100)
+    private String consumables;
+
+    @Column(name = "hyperdrive_rating")
+    private Float hyperdriveRating;
+
+    @Column(name = "MGLT")
+    private Integer mglt;
+
+    @Column(name = "starship_class", length = 100)
+    private String starshipClass;
+
+    @Column(name = "url", nullable = false)
+    private String url;
+
+    @ColumnDefault("CURRENT_TIMESTAMP")
+    @Column(name = "created", nullable = false)
+    private Instant created;
+
+    @ColumnDefault("CURRENT_TIMESTAMP")
+    @Column(name = "edited", nullable = false)
+    private Instant edited;
+
+}
