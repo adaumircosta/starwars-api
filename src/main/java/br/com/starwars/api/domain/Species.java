@@ -22,7 +22,7 @@ public class Species {
     private String skinColors;
     private String hairColors;
     private String eyeColors;
-    private Integer averageLifespan;
+    private String averageLifespan;
     private Planet homeworld;
     private String language;
     List<Person> people;

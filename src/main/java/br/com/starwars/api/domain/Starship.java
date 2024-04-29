@@ -28,13 +28,13 @@ public class Starship {
     private String manufacturer;
     private String costInCredits;
     private String length;
-    private Integer maxAtmosphericSpeed;
+    private String maxAtmosphericSpeed;
     private String crew;
     private String passengers;
-    private Long cargoCapacity;
+    private String cargoCapacity;
     private String consumables;
-    private Float hyperdriveRating;
-    private Integer mglt;
+    private String hyperdriveRating;
+    private String mglt;
     private String starshipClass;
     private String url;
     private Instant created;

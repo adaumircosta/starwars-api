@@ -22,11 +22,11 @@ public class VehicleDetailClientResponseDto {
     private String costInCredits;
     private String length;
     @JsonProperty("max_atmosphering_speed")
-    private Integer maxAtmosphericSpeed;
+    private String maxAtmosphericSpeed;
     private Integer crew;
     private String passengers;
     @JsonProperty("cargo_capacity")
-    private Long cargoCapacity;
+    private String cargoCapacity;
     private String consumables;
     @JsonProperty("vehicle_class")
     private String vehicleClass;

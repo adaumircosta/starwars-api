@@ -48,7 +48,7 @@ public class PersonEntity {
     @Column(name = "birth_year", length = 10)
     private String birthYear;
 
-    @Column(name = "gender", length = 10)
+    @Column(name = "gender", length = 50)
     private String gender;
 
     @ManyToOne(fetch = FetchType.LAZY)

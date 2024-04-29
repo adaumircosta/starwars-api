@@ -29,10 +29,10 @@ public class Vehicle {
     private String manufacturer;
     private String costInCredits;
     private String length;
-    private Integer maxAtmosphericSpeed;
+    private String maxAtmosphericSpeed;
     private Integer crew;
     private String passengers;
-    private Long cargoCapacity;
+    private String cargoCapacity;
     private String consumables;
     private String vehicleClass;
     private List<Person> pilots;

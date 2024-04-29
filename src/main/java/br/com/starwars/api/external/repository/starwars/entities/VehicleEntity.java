@@ -38,7 +38,7 @@ public class VehicleEntity {
     private String length;
 
     @Column(name = "max_atmospheric_speed")
-    private Integer maxAtmosphericSpeed;
+    private String maxAtmosphericSpeed;
 
     @Column(name = "crew")
     private Integer crew;
@@ -47,7 +47,7 @@ public class VehicleEntity {
     private String passengers;
 
     @Column(name = "cargo_capacity")
-    private Long cargoCapacity;
+    private String cargoCapacity;
 
     @Column(name = "consumables", length = 100)
     private String consumables;

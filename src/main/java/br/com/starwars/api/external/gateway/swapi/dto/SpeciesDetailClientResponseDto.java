@@ -28,7 +28,7 @@ public class SpeciesDetailClientResponseDto {
     @JsonProperty("eye_colors")
     private String eyeColors;
     @JsonProperty("average_lifespan")
-    private Integer averageLifespan;
+    private String averageLifespan;
     private String homeworld;
     private String language;
     private List<String> people;

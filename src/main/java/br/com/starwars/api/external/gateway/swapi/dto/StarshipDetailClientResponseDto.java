@@ -22,16 +22,16 @@ public class StarshipDetailClientResponseDto {
     private String costInCredits;
     private String length;
     @JsonProperty("max_atmosphering_speed")
-    private Integer maxAtmosphericSpeed;
+    private String maxAtmosphericSpeed;
     private String crew;
     private String passengers;
     @JsonProperty("cargo_capacity")
-    private Long cargoCapacity;
+    private String cargoCapacity;
     private String consumables;
     @JsonProperty("hyperdrive_rating")
-    private Float hyperdriveRating;
+    private String hyperdriveRating;
     @JsonProperty("MGLT")
-    private Integer mglt;
+    private String mglt;
     @JsonProperty("starship_class")
     private String starshipClass;
     List<String> pilots;

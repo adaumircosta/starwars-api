@@ -49,7 +49,7 @@ public class SpeciesEntity {
     private String eyeColors;
 
     @Column(name = "average_lifespan")
-    private Integer averageLifespan;
+    private String averageLifespan;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.SET_NULL)

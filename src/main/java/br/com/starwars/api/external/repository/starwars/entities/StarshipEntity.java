@@ -19,7 +19,6 @@ import java.time.Instant;
 public class StarshipEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "starship_id", nullable = false)
     private Integer id;
 
@@ -39,7 +38,7 @@ public class StarshipEntity {
     private String length;
 
     @Column(name = "max_atmospheric_speed")
-    private Integer maxAtmosphericSpeed;
+    private String maxAtmosphericSpeed;
 
     @Column(name = "crew", length = 50)
     private String crew;
@@ -48,16 +47,16 @@ public class StarshipEntity {
     private String passengers;
 
     @Column(name = "cargo_capacity")
-    private Long cargoCapacity;
+    private String cargoCapacity;
 
     @Column(name = "consumables", length = 100)
     private String consumables;
 
     @Column(name = "hyperdrive_rating")
-    private Float hyperdriveRating;
+    private String hyperdriveRating;
 
     @Column(name = "MGLT")
-    private Integer mglt;
+    private String mglt;
 
     @Column(name = "starship_class", length = 100)
     private String starshipClass;
