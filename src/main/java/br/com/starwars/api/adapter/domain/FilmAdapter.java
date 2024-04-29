@@ -2,6 +2,7 @@ package br.com.starwars.api.adapter.domain;
 
 import br.com.starwars.api.domain.Film;
 import br.com.starwars.api.external.gateway.swapi.dto.FilmDetailClientResponseDto;
+import br.com.starwars.api.external.repository.starwars.entities.FilmEntity;
 import lombok.experimental.UtilityClass;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class FilmAdapter {
     private final SpeciesMapperAdapter speciesMapperAdapter = SpeciesMapperAdapter.INSTANCE;
 
     public List<Film> convert(List<FilmDetailClientResponseDto> filmDetailClientResponseDto) {
+
         if (filmDetailClientResponseDto == null) {
             return null;
         }
@@ -28,6 +30,44 @@ public class FilmAdapter {
 
         return list;
     }
+
+    public List<Film> convertToFilm(List<FilmEntity> filmEntityList) {
+        if (filmEntityList == null) {
+            return null;
+        }
+
+        List<Film> list = new ArrayList<>(filmEntityList.size());
+        for (FilmEntity filmEntity : filmEntityList) {
+            list.add(filmEntityToFilm(filmEntity));
+        }
+
+        return list;
+    }
+
+    public Film filmEntityToFilm(FilmEntity filmEntity) {
+        if ( filmEntity == null ) {
+            return null;
+        }
+
+        Film film = new Film();
+
+        film.setTitle( filmEntity.getTitle() );
+        film.setEpisodeId( filmEntity.getEpisodeId() );
+        film.setOpeningCrawl( filmEntity.getOpeningCrawl() );
+        film.setDirector( filmEntity.getDirector() );
+        film.setProducer( filmEntity.getProducer() );
+        film.setReleaseDate( filmEntity.getReleaseDate() );
+        film.setCreated( filmEntity.getCreated() );
+        film.setEdited( filmEntity.getEdited() );
+        film.setUrl( filmEntity.getUrl() );
+        film.setVersion(filmEntity.getVersion());
+
+        return film;
+    }
+
+
+
+
 
     private Film filmDetailClientResponseDtoToFilm(FilmDetailClientResponseDto filmDetailClientResponseDto) {
         if ( filmDetailClientResponseDto == null ) {
@@ -53,5 +93,7 @@ public class FilmAdapter {
 
         return film;
     }
+
+
 
 }

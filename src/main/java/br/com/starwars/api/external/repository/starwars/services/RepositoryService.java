@@ -35,4 +35,7 @@ public interface RepositoryService {
     void insertAllPersonStarship(List<PersonStarshipEntity> list);
     void insertAllPersonSpecies(List<PersonSpeciesEntity> list);
     void insertAllPlanetPerson(List<PlanetPersonEntity> list);
+
+    List<FilmEntity> getAllFilms();
+    FilmEntity getFilmDetails(int episodeId);
 }

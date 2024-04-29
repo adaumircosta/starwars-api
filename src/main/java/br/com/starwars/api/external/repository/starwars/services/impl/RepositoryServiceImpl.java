@@ -131,5 +131,16 @@ public class RepositoryServiceImpl implements RepositoryService {
         planetPersonRepository.saveAll(list);
     }
 
+    @Override
+    public List<FilmEntity> getAllFilms() {
+        return filmRepository.findAll();
+    }
+
+    @Override
+    public FilmEntity getFilmDetails(int episodeId) {
+        return filmRepository.findByEpisodeId(episodeId);
+
+    }
+
 
 }
