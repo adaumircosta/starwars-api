@@ -21,11 +21,11 @@ public class SaveMainDataImpl implements ProcessDataDecorator {
     @Override
     public void execute(ProcessDataSW processDataSW) {
         saveMainFilmData(processDataSW);
-        //saveMainPersonData(processDataSW);
-        //saveMainPlanetData(processDataSW);
-        //saveMainSpeciesData(processDataSW);
-        //saveMainStarshipData(processDataSW);
-        //saveMainVehicleData(processDataSW);
+        saveMainPlanetData(processDataSW);
+        saveMainStarshipData(processDataSW);
+        saveMainVehicleData(processDataSW);
+        saveMainSpeciesData(processDataSW);
+        saveMainPersonData(processDataSW);
     }
 
     private void saveMainFilmData(ProcessDataSW processDataSW) {
