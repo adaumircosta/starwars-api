@@ -18,7 +18,7 @@ public class Species {
     private String name;
     private String classification;
     private String designation;
-    private Integer averageHeight;
+    private String averageHeight;
     private String skinColors;
     private String hairColors;
     private String eyeColors;

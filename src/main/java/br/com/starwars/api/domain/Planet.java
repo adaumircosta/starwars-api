@@ -16,13 +16,13 @@ public class Planet {
 
     private Integer id;
     private String name;
-    private Integer rotationPeriod;
-    private Integer orbitalPeriod;
+    private String rotationPeriod;
+    private String orbitalPeriod;
     private String diameter;
     private String climate;
     private String gravity;
     private String terrain;
-    private Integer surfaceWater;
+    private String surfaceWater;
     private String population;
     private List<Person> residents;
     private List<Film> films;
