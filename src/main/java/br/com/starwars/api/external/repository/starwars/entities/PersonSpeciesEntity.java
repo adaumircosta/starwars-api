@@ -16,7 +16,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Setter
 @Entity
 @Table(name = "person_species")
-public class PersonSpecyEntity {
+public class PersonSpeciesEntity {
 
     @EmbeddedId
     private PersonSpeciesIdEntity id;
