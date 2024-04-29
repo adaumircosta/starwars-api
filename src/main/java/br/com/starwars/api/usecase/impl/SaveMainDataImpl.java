@@ -10,8 +10,10 @@ import br.com.starwars.api.domain.ProcessDataSW;
 import br.com.starwars.api.external.repository.starwars.services.RepositoryService;
 import br.com.starwars.api.usecase.ProcessDataDecorator;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
+@Order(2)
 @Service
 @RequiredArgsConstructor
 public class SaveMainDataImpl implements ProcessDataDecorator {
