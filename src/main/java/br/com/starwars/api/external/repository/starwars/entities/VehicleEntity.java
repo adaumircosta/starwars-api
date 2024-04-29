@@ -19,7 +19,6 @@ import java.time.Instant;
 public class VehicleEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vehicle_id", nullable = false)
     private Integer id;
 
@@ -35,8 +34,8 @@ public class VehicleEntity {
     @Column(name = "cost_in_credits", length = 100)
     private String costInCredits;
 
-    @Column(name = "length")
-    private Float length;
+    @Column(name = "length", length = 100)
+    private String length;
 
     @Column(name = "max_atmospheric_speed")
     private Integer maxAtmosphericSpeed;
@@ -44,8 +43,8 @@ public class VehicleEntity {
     @Column(name = "crew")
     private Integer crew;
 
-    @Column(name = "passengers")
-    private Integer passengers;
+    @Column(name = "passengers", length = 100)
+    private String passengers;
 
     @Column(name = "cargo_capacity")
     private Long cargoCapacity;

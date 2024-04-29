@@ -35,17 +35,17 @@ public class StarshipEntity {
     @Column(name = "cost_in_credits", length = 100)
     private String costInCredits;
 
-    @Column(name = "length")
-    private Float length;
+    @Column(name = "length", length = 50)
+    private String length;
 
     @Column(name = "max_atmospheric_speed")
     private Integer maxAtmosphericSpeed;
 
-    @Column(name = "crew")
-    private Integer crew;
+    @Column(name = "crew", length = 50)
+    private String crew;
 
-    @Column(name = "passengers")
-    private Integer passengers;
+    @Column(name = "passengers", length = 50)
+    private String passengers;
 
     @Column(name = "cargo_capacity")
     private Long cargoCapacity;

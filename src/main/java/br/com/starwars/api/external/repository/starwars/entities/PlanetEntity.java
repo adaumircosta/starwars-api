@@ -19,21 +19,20 @@ import java.time.Instant;
 public class PlanetEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "planet_id", nullable = false)
     private Integer id;
 
     @Column(name = "name", nullable = false, length = 100)
     private String name;
 
-    @Column(name = "rotation_period")
-    private Integer rotationPeriod;
+    @Column(name = "rotation_period", length = 100)
+    private String rotationPeriod;
 
     @Column(name = "orbital_period")
-    private Integer orbitalPeriod;
+    private String orbitalPeriod;
 
-    @Column(name = "diameter")
-    private Integer diameter;
+    @Column(name = "diameter", length = 100)
+    private String diameter;
 
     @Column(name = "climate", length = 100)
     private String climate;
@@ -44,11 +43,11 @@ public class PlanetEntity {
     @Column(name = "terrain", length = 100)
     private String terrain;
 
-    @Column(name = "surface_water")
-    private Integer surfaceWater;
+    @Column(name = "surface_water", length = 100)
+    private String surfaceWater;
 
-    @Column(name = "population")
-    private Long population;
+    @Column(name = "population", length = 100)
+    private String population;
 
     @Column(name = "url", nullable = false)
     private String url;

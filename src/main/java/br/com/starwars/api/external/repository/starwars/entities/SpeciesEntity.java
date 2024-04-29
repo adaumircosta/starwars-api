@@ -24,7 +24,6 @@ import java.time.Instant;
 public class SpeciesEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "species_id", nullable = false)
     private Integer id;
 
@@ -38,7 +37,7 @@ public class SpeciesEntity {
     private String designation;
 
     @Column(name = "average_height")
-    private Integer averageHeight;
+    private String averageHeight;
 
     @Column(name = "skin_colors")
     private String skinColors;

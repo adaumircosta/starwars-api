@@ -24,18 +24,17 @@ import java.time.Instant;
 public class PersonEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "person_id", nullable = false)
     private Integer id;
 
     @Column(name = "name", nullable = false, length = 100)
     private String name;
 
-    @Column(name = "height")
-    private Integer height;
+    @Column(name = "height", length = 50)
+    private String height;
 
-    @Column(name = "mass")
-    private Integer mass;
+    @Column(name = "mass", length = 50)
+    private String mass;
 
     @Column(name = "hair_color", length = 50)
     private String hairColor;
