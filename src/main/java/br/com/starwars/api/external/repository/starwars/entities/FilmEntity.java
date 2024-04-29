@@ -57,4 +57,7 @@ public class FilmEntity {
     @Column(name = "edited", nullable = false)
     private Instant edited;
 
+    @Column(name = "version", nullable = false)
+    private Integer version;
+
 }
