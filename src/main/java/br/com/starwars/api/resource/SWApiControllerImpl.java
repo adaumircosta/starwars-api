@@ -4,10 +4,14 @@ import br.com.starwars.api.adapter.resource.FilmDetailResponseDtoMapperAdapter;
 import br.com.starwars.api.adapter.resource.FilmResponseDtoMapperAdapter;
 import br.com.starwars.api.resource.dto.FilmDetailResponseDto;
 import br.com.starwars.api.resource.dto.FilmResponseDto;
+import br.com.starwars.api.resource.dto.UpdateFilmRequestDto;
 import br.com.starwars.api.service.GetFilmDataService;
+import br.com.starwars.api.usecase.UpdateFilmUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +26,7 @@ import static java.util.Objects.nonNull;
 public class SWApiControllerImpl implements SWApiController {
 
     private final GetFilmDataService service;
+    private final UpdateFilmUseCase updateFilmUseCase;
 
     @Override
     @GetMapping
@@ -32,13 +37,15 @@ public class SWApiControllerImpl implements SWApiController {
     }
 
     @Override
-    public ResponseEntity<Void> patchFilm(String descrption) {
+    @PatchMapping(value = "/film")
+    public ResponseEntity<Void> patchFilm(@RequestBody final UpdateFilmRequestDto updateFilmRequestDto) {
+        updateFilmUseCase.execute(updateFilmRequestDto.getEpisodeId(), updateFilmRequestDto.getDescription());
         return ResponseEntity.noContent().build();
     }
 
     @Override
     @GetMapping(value = "/detalhes")
-    public ResponseEntity<FilmResponseDto> getFilmDetails(@RequestParam Integer episodeId) {
+    public ResponseEntity<FilmResponseDto> getFilmDetails(@RequestParam final Integer episodeId) {
 
         var response = FilmResponseDtoMapperAdapter.INSTANCE.convert(service.getFilmDetails(episodeId));
         if(nonNull(response)){
@@ -49,7 +56,7 @@ public class SWApiControllerImpl implements SWApiController {
 
     @Override
     @GetMapping(value = "/detalhar")
-    public ResponseEntity<FilmDetailResponseDto> getFilmDetail(@RequestParam Integer episodeId) {
+    public ResponseEntity<FilmDetailResponseDto> getFilmDetail(@RequestParam final Integer episodeId) {
 
         var response = FilmDetailResponseDtoMapperAdapter.INSTANCE.convert(service.getFilmDetail(episodeId));
         if(nonNull(response)){

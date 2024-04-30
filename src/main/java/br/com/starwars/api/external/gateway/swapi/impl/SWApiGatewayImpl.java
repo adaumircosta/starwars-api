@@ -1,5 +1,6 @@
-package br.com.starwars.api.external.gateway.swapi;
+package br.com.starwars.api.external.gateway.swapi.impl;
 
+import br.com.starwars.api.external.gateway.swapi.SWApiGateway;
 import br.com.starwars.api.external.gateway.swapi.client.SWApiClient;
 import br.com.starwars.api.external.gateway.swapi.dto.FilmDetailClientResponseDto;
 import br.com.starwars.api.external.gateway.swapi.dto.PersonDetailClientResponseDto;

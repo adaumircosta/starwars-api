@@ -17,7 +17,7 @@ public interface RepositoryService {
     void insertAllSpecies(List<SpeciesEntity> list);
     void insertAllStarships(List<StarshipEntity> list);
     void insertAllVehicles(List<VehicleEntity> list);
-
     List<FilmEntity> getAllFilms();
     FilmEntity getFilmDetails(int episodeId);
+    void updateFilm(Integer episodeId, String description);
 }

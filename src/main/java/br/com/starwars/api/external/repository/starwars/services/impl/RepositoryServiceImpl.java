@@ -1,5 +1,6 @@
 package br.com.starwars.api.external.repository.starwars.services.impl;
 
+import br.com.starwars.api.exceptions.DatabaseException;
 import br.com.starwars.api.external.repository.starwars.FilmRepository;
 import br.com.starwars.api.external.repository.starwars.PersonRepository;
 import br.com.starwars.api.external.repository.starwars.PlanetRepository;
@@ -14,10 +15,13 @@ import br.com.starwars.api.external.repository.starwars.entities.StarshipEntity;
 import br.com.starwars.api.external.repository.starwars.entities.VehicleEntity;
 import br.com.starwars.api.external.repository.starwars.services.RepositoryService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class RepositoryServiceImpl implements RepositoryService {
@@ -69,6 +73,19 @@ public class RepositoryServiceImpl implements RepositoryService {
     @Override
     public FilmEntity getFilmDetails(int episodeId) {
         return filmRepository.findByEpisodeId(episodeId);
+
+    }
+
+    @Override
+    public void updateFilm(Integer episodeId, String description) {
+        try {
+            var qtd = filmRepository.updateDescription(episodeId, description);
+            log.info("Foram atualizado {} registros", qtd);
+        } catch (DataAccessException ex) {
+            log.error("Erro na atualização da descrição do Film: {}", ex.toString());
+            throw new DatabaseException("Database Error", "Houve um erro na iteração com o banco de dados");
+        }
+
 
     }
 
