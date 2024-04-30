@@ -20,4 +20,5 @@ public interface VehicleMapperAdapter {
     @Mapping(target = "url", source = "value")
     Vehicle map(String value);
 
+    List<Vehicle> convert(List<VehicleDetailClientResponseDto> list);
 }

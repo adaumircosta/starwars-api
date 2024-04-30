@@ -3,6 +3,7 @@ package br.com.starwars.api.usecase.impl;
 import br.com.starwars.api.domain.ProcessDataSW;
 import br.com.starwars.api.usecase.ProcessDataDecorator;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;

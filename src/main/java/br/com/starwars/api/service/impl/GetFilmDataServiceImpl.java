@@ -1,6 +1,6 @@
 package br.com.starwars.api.service.impl;
 
-import br.com.starwars.api.adapter.domain.FilmAdapter;
+import br.com.starwars.api.adapter.domain.FilmMapperAdapter;
 import br.com.starwars.api.domain.Film;
 import br.com.starwars.api.external.repository.starwars.services.RepositoryService;
 import br.com.starwars.api.service.GetFilmDataService;
@@ -18,16 +18,16 @@ public class GetFilmDataServiceImpl implements GetFilmDataService {
 
     @Override
     public List<Film> getAllFilm() {
-        return FilmAdapter.convertToFilm(repositoryService.getAllFilms());
+        return FilmMapperAdapter.INSTANCE.convertList(repositoryService.getAllFilms());
     }
 
     @Override
     public Film getFilmDetails(Integer episodeId) {
-        return FilmAdapter.filmEntityToFilm(repositoryService.getFilmDetails(episodeId));
+        return FilmMapperAdapter.INSTANCE.convert(repositoryService.getFilmDetails(episodeId));
     }
 
     @Override
     public Film getFilmDetail(Integer episodeId) {
-        return FilmAdapter.filmEntityToFilmDetail(repositoryService.getFilmDetails(episodeId));
+        return FilmMapperAdapter.INSTANCE.convert(repositoryService.getFilmDetails(episodeId));
     }
 }

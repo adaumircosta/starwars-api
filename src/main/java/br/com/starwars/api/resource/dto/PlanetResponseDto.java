@@ -25,8 +25,6 @@ public class PlanetResponseDto {
     private String terrain;
     private String surfaceWater;
     private String population;
-    private List<PersonResponseDto> residents;
-    private List<Film> films;
     private Instant created;
     private Instant edited;
     private String url;

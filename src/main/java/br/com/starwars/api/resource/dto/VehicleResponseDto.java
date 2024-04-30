@@ -27,8 +27,6 @@ public class VehicleResponseDto {
     private String cargoCapacity;
     private String consumables;
     private String vehicleClass;
-    private List<PersonResponseDto> pilots;
-    private List<Film> films;
     private String url;
     private Instant created;
     private Instant edited;

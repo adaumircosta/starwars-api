@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Person {
 
+    private Integer id;
     private String name;
     private String height;
     private String mass;
@@ -23,10 +24,6 @@ public class Person {
     private String birthYear;
     private String gender;
     private Planet homeworld;
-    List<Film> films;
-    List<Species> species;
-    List<Vehicle> vehicles;
-    List<Starship> starships;
     private Instant created;
     private Instant edited;
     private String url;

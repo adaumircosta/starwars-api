@@ -25,8 +25,6 @@ public class Species {
     private String averageLifespan;
     private Planet homeworld;
     private String language;
-    List<Person> people;
-    List<Film> films;
     private Instant created;
     private Instant edited;
     private String url;

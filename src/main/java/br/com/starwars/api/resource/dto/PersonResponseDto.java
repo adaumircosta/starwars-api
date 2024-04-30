@@ -24,10 +24,6 @@ public class PersonResponseDto {
     private String birthYear;
     private String gender;
     private PlanetResponseDto homeworld;
-    List<Film> films;
-    List<SpeciesResponseDto> species;
-    List<VehicleResponseDto> vehicles;
-    List<StarshipResponseDto> starships;
     private Instant created;
     private Instant edited;
     private String url;

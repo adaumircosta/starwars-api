@@ -13,21 +13,21 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
-@Order(2)
+@Order(3)
 @Service
 @RequiredArgsConstructor
-public class SaveMainDataImpl implements ProcessDataDecorator {
+public class SaveDataUseCaseImpl implements ProcessDataDecorator {
 
     private final RepositoryService repository;
 
     @Override
     public void execute(ProcessDataSW processDataSW) {
-        saveMainFilmData(processDataSW);
         saveMainPlanetData(processDataSW);
-        saveMainStarshipData(processDataSW);
-        saveMainVehicleData(processDataSW);
-        saveMainSpeciesData(processDataSW);
         saveMainPersonData(processDataSW);
+        saveMainSpeciesData(processDataSW);
+        saveMainVehicleData(processDataSW);
+        saveMainStarshipData(processDataSW);
+        saveMainFilmData(processDataSW);
     }
 
     private void saveMainFilmData(ProcessDataSW processDataSW) {

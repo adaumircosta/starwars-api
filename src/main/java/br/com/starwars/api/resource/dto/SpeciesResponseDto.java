@@ -26,8 +26,6 @@ public class SpeciesResponseDto {
     private String averageLifespan;
     private PlanetResponseDto homeworld;
     private String language;
-    List<PersonResponseDto> people;
-    List<Film> films;
     private Instant created;
     private Instant edited;
     private String url;

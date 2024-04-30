@@ -28,10 +28,6 @@ public class PersonDetailClientResponseDto {
     private String birthYear;
     private String gender;
     private String homeworld;
-    List<String> films;
-    List<String> species;
-    List<String> vehicles;
-    List<String> starships;
     private Instant created;
     private Instant edited;
     private String url;

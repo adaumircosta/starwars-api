@@ -35,8 +35,6 @@ public class Vehicle {
     private String cargoCapacity;
     private String consumables;
     private String vehicleClass;
-    private List<Person> pilots;
-    private List<Film> films;
     private String url;
     private Instant created;
     private Instant edited;

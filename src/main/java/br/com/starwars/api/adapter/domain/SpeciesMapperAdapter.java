@@ -10,7 +10,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, builder = @Builder(disableBuilder = true))
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, builder = @Builder(disableBuilder = true), uses = {PlanetMapperAdapter.class})
 public interface SpeciesMapperAdapter {
 
     SpeciesMapperAdapter INSTANCE = Mappers.getMapper(SpeciesMapperAdapter.class);
@@ -20,4 +20,5 @@ public interface SpeciesMapperAdapter {
     @Mapping(target = "url", source = "value")
     Species map(String value);
 
+    List<Species> convert(List<SpeciesDetailClientResponseDto> list);
 }

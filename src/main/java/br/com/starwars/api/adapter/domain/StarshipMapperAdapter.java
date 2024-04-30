@@ -20,4 +20,5 @@ public interface StarshipMapperAdapter {
     @Mapping(target = "url", source = "value")
     Starship map(String value);
 
+    List<Starship> convert(List<StarshipDetailClientResponseDto> list);
 }

@@ -31,8 +31,6 @@ public class SpeciesDetailClientResponseDto {
     private String averageLifespan;
     private String homeworld;
     private String language;
-    private List<String> people;
-    private List<String> films;
     private Instant created;
     private Instant edited;
     private String url;

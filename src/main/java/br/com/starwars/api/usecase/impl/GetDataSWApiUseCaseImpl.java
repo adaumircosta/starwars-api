@@ -1,11 +1,11 @@
 package br.com.starwars.api.usecase.impl;
 
-import br.com.starwars.api.adapter.domain.FilmAdapter;
-import br.com.starwars.api.adapter.domain.PersonAdapter;
-import br.com.starwars.api.adapter.domain.PlanetAdapter;
-import br.com.starwars.api.adapter.domain.SpeciesAdapter;
-import br.com.starwars.api.adapter.domain.StarshipAdapter;
-import br.com.starwars.api.adapter.domain.VehicleAdapter;
+import br.com.starwars.api.adapter.domain.FilmMapperAdapter;
+import br.com.starwars.api.adapter.domain.PersonMapperAdapter;
+import br.com.starwars.api.adapter.domain.PlanetMapperAdapter;
+import br.com.starwars.api.adapter.domain.SpeciesMapperAdapter;
+import br.com.starwars.api.adapter.domain.StarshipMapperAdapter;
+import br.com.starwars.api.adapter.domain.VehicleMapperAdapter;
 import br.com.starwars.api.domain.Film;
 import br.com.starwars.api.domain.Person;
 import br.com.starwars.api.domain.Planet;
@@ -44,31 +44,31 @@ public class GetDataSWApiUseCaseImpl implements ProcessDataDecorator {
 
     private List<Film> getFilms() {
         var result = swApiGateway.getFilms();
-        return FilmAdapter.convert(result);
+        return FilmMapperAdapter.INSTANCE.convert(result);
     }
 
     private List<Person> getPeople() {
         var result = swApiGateway.getPeople();
-        return PersonAdapter.convert(result);
+        return PersonMapperAdapter.INSTANCE.convert(result);
     }
 
     private List<Planet> getPlanets() {
         var result = swApiGateway.getPlanets();
-        return  PlanetAdapter.convert(result);
+        return  PlanetMapperAdapter.INSTANCE.convert(result);
     }
 
     private List<Species> getSpecies() {
         var result = swApiGateway.getSpecies();
-        return  SpeciesAdapter.convert(result);
+        return  SpeciesMapperAdapter.INSTANCE.convert(result);
     }
 
     private List<Starship> getStarships() {
         var result = swApiGateway.getStarships();
-        return  StarshipAdapter.convert(result);
+        return  StarshipMapperAdapter.INSTANCE.convert(result);
     }
 
     private List<Vehicle> getVehicles() {
         var result = swApiGateway.getVehicles();
-        return  VehicleAdapter.convert(result);
+        return  VehicleMapperAdapter.INSTANCE.convert(result);
     }
 }

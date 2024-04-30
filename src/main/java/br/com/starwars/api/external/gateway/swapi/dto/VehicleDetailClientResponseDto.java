@@ -30,8 +30,6 @@ public class VehicleDetailClientResponseDto {
     private String consumables;
     @JsonProperty("vehicle_class")
     private String vehicleClass;
-    List<String> pilots;
-    List<String> films;
     private Instant created;
     private Instant edited;
     private String url;

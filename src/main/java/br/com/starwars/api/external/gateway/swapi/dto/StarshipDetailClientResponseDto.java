@@ -34,8 +34,6 @@ public class StarshipDetailClientResponseDto {
     private String mglt;
     @JsonProperty("starship_class")
     private String starshipClass;
-    List<String> pilots;
-    List<String> films;
     private Instant created;
     private Instant edited;
     private String url;

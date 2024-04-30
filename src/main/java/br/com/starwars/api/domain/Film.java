@@ -17,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Film extends SWApi{
 
+    private Integer id;
     private String title;
     private Integer episodeId;
     private String openingCrawl;

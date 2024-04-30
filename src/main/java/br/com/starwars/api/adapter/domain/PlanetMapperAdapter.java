@@ -1,6 +1,7 @@
 package br.com.starwars.api.adapter.domain;
 
 import br.com.starwars.api.domain.Planet;
+import br.com.starwars.api.external.gateway.swapi.dto.PlanetDetailClientResponseDto;
 import org.mapstruct.Builder;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -19,4 +20,5 @@ public interface PlanetMapperAdapter {
     @Mapping(target = "url", source = "value")
     Planet map(String value);
 
+    List<Planet> convert(List<PlanetDetailClientResponseDto> list);
 }

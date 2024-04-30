@@ -27,8 +27,6 @@ public class PlanetDetailClientResponseDto {
     @JsonProperty("surface_water")
     private String surfaceWater;
     private String population;
-    List<String> residents;
-    List<String> films;
     private Instant created;
     private Instant edited;
     private String url;
