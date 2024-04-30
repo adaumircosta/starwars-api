@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class FilmResponseDto {
+public class FilmDetailResponseDto {
 
     private String title;
     private Integer episodeId;
@@ -21,6 +21,11 @@ public class FilmResponseDto {
     private String director;
     private String producer;
     private LocalDate releaseDate;
+    private List<PersonResponseDto> characters;
+    private List<PlanetResponseDto> planets;
+    private List<StarshipResponseDto> starships;
+    private List<VehicleResponseDto> vehicles;
+    private List<SpeciesResponseDto> species;
     private Instant created;
     private Instant edited;
     private String url;

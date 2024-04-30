@@ -1,6 +1,8 @@
 package br.com.starwars.api.resource;
 
+import br.com.starwars.api.adapter.resource.FilmDetailResponseDtoMapperAdapter;
 import br.com.starwars.api.adapter.resource.FilmResponseDtoMapperAdapter;
+import br.com.starwars.api.resource.dto.FilmDetailResponseDto;
 import br.com.starwars.api.resource.dto.FilmResponseDto;
 import br.com.starwars.api.service.GetFilmDataService;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +37,7 @@ public class SWApiControllerImpl implements SWApiController {
     }
 
     @Override
-    @GetMapping(value = "/details")
+    @GetMapping(value = "/detalhes")
     public ResponseEntity<FilmResponseDto> getFilmDetails(@RequestParam Integer episodeId) {
 
         var response = FilmResponseDtoMapperAdapter.INSTANCE.convert(service.getFilmDetails(episodeId));
@@ -46,10 +48,10 @@ public class SWApiControllerImpl implements SWApiController {
     }
 
     @Override
-    @GetMapping(value = "/detail")
-    public ResponseEntity<FilmResponseDto> getFilmDetail(@RequestParam Integer episodeId) {
+    @GetMapping(value = "/detalhar")
+    public ResponseEntity<FilmDetailResponseDto> getFilmDetail(@RequestParam Integer episodeId) {
 
-        var response = FilmResponseDtoMapperAdapter.INSTANCE.convert(service.getFilmDetail(episodeId));
+        var response = FilmDetailResponseDtoMapperAdapter.INSTANCE.convert(service.getFilmDetail(episodeId));
         if(nonNull(response)){
             return ResponseEntity.ok(response);
         }
