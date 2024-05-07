@@ -79,14 +79,18 @@ public class RepositoryServiceImpl implements RepositoryService {
     @Override
     public void updateFilm(Integer episodeId, String description) {
         try {
+
             var qtd = filmRepository.updateDescription(episodeId, description);
             log.info("Foram atualizado {} registros", qtd);
         } catch (DataAccessException ex) {
             log.error("Erro na atualização da descrição do Film: {}", ex.toString());
             throw new DatabaseException("Database Error", "Houve um erro na iteração com o banco de dados");
         }
+    }
 
-
+    @Override
+    public boolean existsId(Integer episodeId) {
+        return filmRepository.existsById(episodeId);
     }
 
 

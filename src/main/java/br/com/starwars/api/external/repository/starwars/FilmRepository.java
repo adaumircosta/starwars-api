@@ -20,4 +20,6 @@ public interface FilmRepository extends JpaRepository<FilmEntity, Integer> {
     @Transactional
     @Query(value = "UPDATE FilmEntity f SET f.openingCrawl = :description, f.version = f.version +1 WHERE f.episodeId = :episodeId")
     int updateDescription(@Param("episodeId") Integer episodeId, @Param("description") String description);
+
+
 }

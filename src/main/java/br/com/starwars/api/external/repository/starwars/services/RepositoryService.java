@@ -20,4 +20,6 @@ public interface RepositoryService {
     List<FilmEntity> getAllFilms();
     FilmEntity getFilmDetails(int episodeId);
     void updateFilm(Integer episodeId, String description);
+
+    boolean existsId(Integer episodeId);
 }
