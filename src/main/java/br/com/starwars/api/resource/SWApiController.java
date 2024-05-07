@@ -27,7 +27,7 @@ public interface SWApiController {
     @Operation(summary = "Atualiza a descrição de um filme especifico", description = "Dado um id do filme e uma descrição no body o filme é atualizado")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Operação realizada com sucesso"),
-            @ApiResponse(responseCode = "422", description = "Erro ao realizar a atualização", content = @Content(schema = @Schema(implementation = ResponseError.class))),
+            @ApiResponse(responseCode = "404", description = "Filme nao encontrado", content = @Content(schema = @Schema(implementation = ResponseError.class))),
             @ApiResponse(responseCode = "500", description = "Erro interno", content = @Content(schema = @Schema(implementation = ResponseError.class)))
     })
     ResponseEntity<Void> patchFilm(UpdateFilmRequestDto updateFilmRequestDto);
